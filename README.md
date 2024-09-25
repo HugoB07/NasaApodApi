@@ -1,6 +1,6 @@
 # NASA Astronomy Picture of the Day (APOD) API
 
-This project is a .NET application that retrieves and stores data from NASA's Astronomy Picture of the Day (APOD) API. The application provides endpoints to access APOD data for specific dates or date ranges, with local storage in a MongoDB database to enhance performance and avoid duplicate requests.
+This project is a .NET application that retrieves and stores data from NASA's Astronomy Picture of the Day (APOD) API. It provides endpoints to access APOD data for specific dates or date ranges, with local storage in a MongoDB database to enhance performance and avoid duplicate requests. When querying for a large date range, requests to the official APOD API can take a considerable amount of time. By caching the data in the MongoDB database, this service provides much faster responses once the data is stored.
 
 ## Table of Contents
 - [Features](#features)
@@ -19,6 +19,7 @@ This project is a .NET application that retrieves and stores data from NASA's As
 - Fetch APOD data for today, a specific date, or a range of dates.
 - Store retrieved data locally in a MongoDB database.
 - Avoid duplicate entries by checking the local database before making API requests.
+- **Automatic Data Fetching**: APOD data is automatically fetched every day at 10 AM UTC.
 
 ## Technologies Used
 - **C#**: The primary programming language for the application.
@@ -58,6 +59,10 @@ To install and run this project locally, follow these steps:
    The API will be running at `http://localhost:5269/swagger`.
 
 ## Setup
+
+### Automatic Data Fetching
+
+The application includes a background service that fetches the latest APOD data daily at 10 AM UTC. You don't need to perform any additional configuration for this feature; simply running the application will ensure that the latest data is always available.
 
 ### appsettings.json Configuration
 

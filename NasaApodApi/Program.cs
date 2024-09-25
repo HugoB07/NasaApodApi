@@ -13,6 +13,7 @@ builder.Services.AddSingleton<IMongoClient, MongoClient>(sp =>
     return new MongoClient(uri);
 });
 builder.Services.AddScoped<IApodService, ApodService>(); 
+builder.Services.AddHostedService<ApodDataFetcherService>();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
