@@ -5,6 +5,7 @@ This project is a .NET application that retrieves and stores data from NASA's As
 ## Table of Contents
 - [Features](#features)
 - [Technologies Used](#technologies-used)
+- [Installation](#installation)
 - [Setup](#setup)
   - [appsettings.json Configuration](#appsettingsjson-configuration)
 - [API Endpoints](#api-endpoints)
@@ -25,6 +26,36 @@ This project is a .NET application that retrieves and stores data from NASA's As
 - **MongoDB**: NoSQL database for local storage.
 - **HttpClient**: To make HTTP requests to NASA's APOD API.
 - **Newtonsoft.Json**: For JSON serialization and deserialization.
+
+## Installation
+To install and run this project locally, follow these steps:
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/HugoB07/NasaApodApi.git
+   cd NasaApodApi/NasaApodApi
+   ```
+
+2. **Install Dependencies**:
+   Make sure you have the [.NET SDK](https://dotnet.microsoft.com/download) installed. Then run the following command to restore the project dependencies:
+   ```bash
+   dotnet restore
+   ```
+
+3. **Set Up MongoDB**:
+   Ensure you have a MongoDB instance running. You can install MongoDB locally or use a cloud instance. Update the `ConnectionString` in `appsettings.json` accordingly.
+
+4. **Configure appsettings.json**:
+   Update the configuration settings as described in the [Setup](#setup) section.
+
+5. **Run the Application**:
+   To start the application, use the following command:
+   ```bash
+   dotnet run
+   ```
+
+6. **Access the API**:
+   The API will be running at `http://localhost:5269/swagger`.
 
 ## Setup
 
